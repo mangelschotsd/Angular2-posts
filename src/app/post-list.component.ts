@@ -11,6 +11,7 @@ import { PostService } from './post.service';
 
 export class PostListComponent  {
    posts: Post[];
+   comments: Comment[];
 
    @Output() commentsFound = new EventEmitter();
 
@@ -21,12 +22,16 @@ export class PostListComponent  {
    }
 
    getComments(index: number): void {
-     this.postService.getCommentsForPost(index).subscribe(data => this.posts = data);
+     this.postService.getCommentsForPost(index).subscribe(data => this.comments = data)
+
+     for (Comment in this.comments) {
+       console.log(Comment.cname);
+     };
    }
 
    printComments(comments: Comment[]): void {
-     for c in comments {
+     for (let c of comments) {
        console.log(c['name']);
-     }
+     };
    }
 }

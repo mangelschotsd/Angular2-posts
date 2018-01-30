@@ -1,14 +1,14 @@
 "use strict";
 var Comment = (function () {
-    function Comment(userId, id, name, title, body) {
-        this.userId = userId;
-        this.id = id;
-        this.name = name;
-        this.title = title;
-        this.body = body;
+    function Comment(postId, cid, cname, ctitle, cbody) {
+        this.postId = postId;
+        this.cid = cid;
+        this.cname = cname;
+        this.ctitle = ctitle;
+        this.cbody = cbody;
     }
     Comment.prototype.toForm = function () {
-        return "postId=" + this.userId + "&id=" + this.id + "&title=" + this.title + "&name=" + this.name + "&title=" + this.title + "&body=" + this.body;
+        return "postId=" + this.userId + "&cid=" + this.cid + "&cname=" + this.cname + "&ctitle=" + this.ctitle + "&cbody=" + this.cbody;
     };
     return Comment;
 }());

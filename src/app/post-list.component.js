@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var comment_1 = require("./comment");
 var post_service_1 = require("./post.service");
 var PostListComponent = (function () {
     function PostListComponent(postService) {
@@ -21,12 +22,18 @@ var PostListComponent = (function () {
     };
     PostListComponent.prototype.getComments = function (index) {
         var _this = this;
-        this.postService.getCommentsForPost(index).subscribe(function (data) { return _this.posts = data; });
+        this.postService.getCommentsForPost(index).subscribe(function (data) { return _this.comments = data; });
+        for (comment_1.Comment in this.comments) {
+            console.log(comment_1.Comment.cname);
+        }
+        ;
     };
     PostListComponent.prototype.printComments = function (comments) {
-        for (c in comments) {
+        for (var _i = 0, comments_1 = comments; _i < comments_1.length; _i++) {
+            var c = comments_1[_i];
             console.log(c['name']);
         }
+        ;
     };
     return PostListComponent;
 }());

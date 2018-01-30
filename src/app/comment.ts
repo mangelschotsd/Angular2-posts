@@ -1,8 +1,8 @@
 export class Comment {
 
-   constructor (public userId: number, public id: number, public name: string, public title: string, public body: string) {}
+   constructor (public postId: number, public cid: number, public cname: string, public ctitle: string, public cbody: string) {}
 
    toForm(): string {
-      return `postId=${this.userId}&id=${this.id}&title=${this.title}&name=${this.name}&title=${this.title}&body=${this.body}`;
+      return `postId=${this.userId}&cid=${this.cid}&cname=${this.cname}&ctitle=${this.ctitle}&cbody=${this.cbody}`;
    }
 }

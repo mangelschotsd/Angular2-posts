@@ -22,7 +22,7 @@ var PostService = (function () {
     };
     // get comments based on the index
     PostService.prototype.getCommentsForPost = function (index) {
-        var url = 'http://jsonplaceholder.typicode.com/post/' + number + '/comments';
+        var url = 'http://jsonplaceholder.typicode.com/post/' + index + '/comments';
         return this.http.get(url);
     };
     return PostService;
