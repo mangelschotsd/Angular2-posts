@@ -8,7 +8,7 @@ var Comment = (function () {
         this.cbody = cbody;
     }
     Comment.prototype.toForm = function () {
-        return "postId=" + this.userId + "&cid=" + this.cid + "&cname=" + this.cname + "&ctitle=" + this.ctitle + "&cbody=" + this.cbody;
+        return "postId=" + this.postId + "&cid=" + this.cid + "&cname=" + this.cname + "&ctitle=" + this.ctitle + "&cbody=" + this.cbody;
     };
     return Comment;
 }());

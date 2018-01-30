@@ -14,7 +14,7 @@ var AppComponent = (function () {
     }
     AppComponent.prototype.handlecommentsFound = function (data) {
         for (var i = 0; i < data.length; i++) {
-            console.log(data[i].name);
+            console.log(data[i].cname);
         }
     };
     return AppComponent;

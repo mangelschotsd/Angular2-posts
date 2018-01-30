@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { Post } from './post';
 import { Comment } from './comment';
 
+import { AppComponent } from './app.component';
 import { PostService } from './post.service';
 
 @Component({
@@ -24,9 +25,6 @@ export class PostListComponent  {
    getComments(index: number): void {
      this.postService.getCommentsForPost(index).subscribe(data => this.comments = data)
 
-     for (Comment in this.comments) {
-       console.log(Comment.cname);
-     };
    }
 
    printComments(comments: Comment[]): void {
